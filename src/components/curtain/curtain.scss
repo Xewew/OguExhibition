@@ -1,0 +1,221 @@
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0);
+    pointer-events: none;
+    transition: background 0.4s;
+    z-index: 10;
+
+    &.active {
+      background: rgba(0,0,0,0.55);
+      pointer-events: all;
+    }
+  }
+
+  .slide-menu {
+    position: absolute;
+    top: -70%;
+    left: 0;
+    width: 100%;
+    height: 60vh;
+    background: #D9D9D9;
+    padding: 40px 50px;
+    transition: top 0.4s ease-in-out;
+    z-index: 5;
+    text-align: left;
+
+    &.active {
+      top: 0;
+    }
+
+     .menu__extra-line {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            padding: 1px;
+            width: 130px;
+            height: 5px;
+            border-radius: 23px;
+            z-index: 11;
+            background: #000;
+            cursor: pointer;
+            opacity: 0;
+            transform: translate(-50%, -20px);
+            transition: transform 0.25s ease, opacity 0.25s ease;
+            animation: fadeSlide 0.35s ease forwards;
+
+             &.active {
+              opacity: 1;
+              transform: translate(-50%, 0);
+            }
+
+                @keyframes fadeSlide {
+                0% { opacity: 0; transform: translate(-50%, -20px); }
+                100% { opacity: 1; transform: translate(-50%, 0); }
+                }
+
+                &:hover {
+                transform: translateY(0px) scale(1.05);
+                }
+        }
+
+    &__title {
+      font-family: 'DS Dots medium';
+      color: #000;
+      text-align: center;
+      font-size: 230px;
+      line-height: 120%;
+      letter-spacing: -0.02em;
+      margin-top: 50px;
+      margin-bottom: 80px;
+      cursor: default;
+      transition: .6s;
+        &:hover {
+          color: #78b90f;
+        }
+    }
+
+    &__nav {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: 0.4s ease;
+
+      &.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+
+      li {
+        margin-bottom: 20px;
+
+        a {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 900;
+          font-size: 40px;
+          text-decoration: none;
+          color: #989898;
+          transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #000;
+        }
+         
+      }
+    }
+
+    &.active {
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+    }
+  }
+
+  .menu {
+    position: fixed;
+    top: 20px;
+    left: 47%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+        &.dark {
+            .menu__line {
+                background: #000;
+            }
+        }
+        &.light {
+            .menu__line {
+                background: #fff;
+            }
+        }
+    }
+    .menu__line {
+      width: 130px;
+      height: 5px;
+      border-radius: 20px;
+      background: #000;
+      margin-bottom: 7px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+
+      &.hover:nth-child(1) {
+        transform: translateY(6px) rotate(5deg);
+      }
+
+      &.hover:nth-child(2) {
+        transform: translateY(-6px) rotate(-5deg);
+      }
+
+      &.active:nth-child(1) {
+        transform: translateY(6px) rotate(5deg);
+      }
+
+      &.active:nth-child(2) {
+        transform: translateY(-6px) rotate(-5deg);
+      }
+    }
+
+    @media (max-width: 860px) {
+      .menu {
+        top: 20px;
+        left: 43%;
+      }
+      .slide-menu__title {
+        font-size: 24vw;
+      }
+      .slide-menu ul li a {
+        font-size: 21px;
+      }
+  }
+
+  @media (max-width: 600px) {
+      .menu {
+        top: 20px;
+        left: 40%;
+      }
+      .slide-menu ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+      .slide-menu ul li a {
+        font-size: 26px;
+      }
+  }
+
+  @media (max-width: 500px) {
+      .menu {
+        left: 38%;
+      }
+      .slide-menu ul li a {
+        font-size: 21px;
+      }
+  }
+
+  @media (max-width: 460px) {
+      .menu {
+        left: 38%;
+      }
+      .slide-menu ul li a {
+        font-size: 21px;
+      }
+  }
+
+  @media (max-width: 373px) {
+      .menu {
+        left: 38%;
+      }
+      .slide-menu__title {
+        font-size: 20vw;
+      }
+      .slide-menu ul li a {
+        font-size: 18px;
+      }
+  }

@@ -1,0 +1,114 @@
+.hero {
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  z-index: 1;
+  transition: opacity 0.3s ease-out;
+  background-image: url(../../assets/image/hero-one.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  height: 100vh;
+  transition: transform 0.1s linear;
+
+  .hero__content {
+    background-image: url(../../assets/image/hero-two.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 65px;
+    position: relative;
+    z-index: 1;
+  }
+  .logo__img {
+    margin-top: 100px;
+    width:500px;
+    cursor: default;
+    user-select: none;
+  }
+  }
+
+  .hero__title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    color: #000;
+    text-align: center;
+    max-width: 835px;
+    cursor: default;
+  }
+
+  .hero__desc {
+    font-family: 'DS Dots medium';
+    color: #000;
+    font-size: 6vw;
+    cursor: default;
+    transition: .3s;
+    animation: blink 8s infinite;
+
+    @keyframes blink {
+      0%, 100% { color: #000; }
+      50% { color: #fff; }
+    }
+    
+  }
+
+@media (max-width: 900px) {
+  .hero__title {
+    font-size: 4vw;
+    max-width: 835px
+}
+}
+
+@media (max-width: 600px) {
+  .hero .logo__img {
+    width: 400px;
+    margin-left: 50px;
+}
+  .hero__title {
+    font-size: 5vw;
+    max-width: 835px
+}
+.hero__desc {
+    font-size: 8vw;
+    text-align: center;
+}
+}
+
+@media (max-width: 470px) {
+  .hero .logo__img {
+    margin-top: 0;
+    width: 350px;
+    margin-left: 30px;
+}
+  .hero__title {
+    font-size: 5.5vw;
+    max-width: 835px
+}
+.hero__desc {
+    font-size: 10vw;
+    text-align: center;
+}
+}
+
+@media (max-width: 366px) {
+  .hero .logo__img {
+    margin-top: 0;
+    width: 300px;
+    margin-left: 30px;
+}
+  .hero__title {
+    font-size: 6vw;
+    max-width: 835px
+}
+.hero__desc {
+    font-size: 13vw;
+    text-align: center;
+}
+}
+ 

@@ -1,0 +1,61 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+}
+
+a, a:visited, a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:focus, a:active {
+    outline: none;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+p + p {
+    margin-top: 1em;
+}
+
+ul {
+    list-style: none;
+}
+
+img, svg, video {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 100vw;
+    object-fit: cover;
+    height: auto;
+}
+
+input, textarea, select, button {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button, input[type="submit"] {
+    cursor: pointer;
+    display: inline-block;
+    box-shadow: none;
+    background-color: transparent;
+}
+
+label {
+    cursor: pointer;
+}
+
+legend {
+    display: block;
+}

@@ -1,0 +1,123 @@
+.quote {
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    background-color: #fff;
+
+
+    .quote__container {
+        max-width: 1460px;
+        padding: 170px 15px 130px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+        .quote__text-right {
+            font-family: var(--font-family);
+            font-weight: 600;
+            font-size: 1.2vw;
+            line-height: 120%;
+            letter-spacing: -0.02em;
+            color: #000;
+        }
+
+            .quote__text-low {
+                max-width: 1500px;
+                margin: 0 auto;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+                .quote__title {
+                    font-size: 57px;
+                    font-weight: 600;
+                }
+}
+
+@media (max-width: 1500px) {
+    
+    .quote .quote__container {
+        max-width: 1360px;
+         padding: 250px 25px 100px;
+    }
+    .quote .quote__text-low {
+        max-width: 1320px;
+    }
+    .quote .quote__title {
+        font-size: 42px;
+    }
+    
+}
+
+@media (max-width: 1188px) {
+   
+    .quote .quote__container {
+        max-width: 1060px;
+         padding: 200px 25px 100px;
+    }
+    .quote .quote__text-right {
+        font-size: 1.5vw;
+    }
+}
+
+@media (max-width: 1000px) {
+    .quote .quote__container {
+        max-width: 830px;
+         padding: 250px 25px 100px;
+    }
+    .quote .quote__text-low {
+        max-width: 830px;
+    }
+    .quote .quote__title {
+        font-size: 32px;
+    }
+    
+}
+
+@media (max-width: 860px) {
+    
+    .quote .quote__container {
+        max-width: 630px;
+         padding: 250px 25px 100px;
+    }
+    .quote .quote__text-right {
+        font-size: 1.7vw;
+    }
+    .quote .quote__text-low {
+        max-width: 630px;
+    }
+    .quote .quote__title {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 620px) {
+  
+    .quote .quote__container {
+        max-width: 780px;
+         padding: 250px 25px 70px;
+    }
+    .quote .quote__text-right {
+        font-size: 3vw;
+    }
+    .quote .quote__text-low {
+        max-width: 510px;
+    }
+    .quote .quote__title {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 450px) {
+    .quote .quote__container {
+         padding: 150px 25px;
+    }
+    .quote .quote__text-right {
+        font-size: 3.5vw;
+    }
+    .quote .quote__title {
+        font-size: 6vw;
+    }
+}

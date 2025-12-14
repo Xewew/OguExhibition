@@ -1,0 +1,118 @@
+:root {
+    --hole-size: 516px;
+}
+
+.hide {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    height: 70vh;
+    background-color: #9dff00;
+    overflow: hidden;
+    --pointer-x: 50%;
+    --pointer-y: 50%;
+    cursor: none;
+}
+
+.hide__content {
+    position: relative;
+    z-index: 1;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hide__title {
+    font-family: var(--third-family);
+    font-size: 11vw;
+    margin: 0;
+    line-height: 1;
+    text-align: center;
+    color: #000;
+    cursor: none;
+}
+
+.hide__mask {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none; 
+  background: radial-gradient(
+    circle var(--hole-size) at var(--pointer-x) var(--pointer-y),
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0) 40%,
+    rgba(0,0,0,1) 50%
+  );
+  transition: background-position 0.1s linear;
+}
+
+.hide:focus-within .hide__mask,
+.hide:hover .hide__mask {
+    background: radial-gradient(
+    circle var(--hole-size) at var(--pointer-x) var(--pointer-y),
+    rgba(0,0,0,0) 0%,
+    rgba(0,0,0,0) calc(var(--hole-size) * 0.45),
+    rgba(0,0,0,1) calc(var(--hole-size) * 0.5)
+  );
+  transition: background-position 100ms linear;
+}
+
+
+@media (max-width: 1600px) {
+    .hide {
+        height: 60vh;
+    }
+
+    .hide__title {
+        font-size: 13vw;
+    }
+}
+
+@media (max-width: 1356px) {
+    :root {
+        --hole-size: 416px;
+    }
+    .hide {
+        height: 55vh;
+    }
+    .hide__title {
+        font-size: 13vw;
+    }
+}
+
+@media (max-width: 800px) {
+    :root {
+        --hole-size: 316px;
+    }
+    .hide {
+        height: 45vh;
+    }
+}
+
+
+@media (max-width: 600px) {
+    :root {
+        --hole-size: 260px;
+    }
+    .hide {
+        height: 40vh;
+    }
+    .hide__title {
+        font-size: 13.5vw;
+    }
+}
+
+@media (max-width: 450px) {
+    :root {
+        --hole-size: 190px;
+    }
+    .hide {
+        height: 35vh;
+    }
+    .hide__title {
+        font-size: 13.5vw;
+    }
+}
+
+
