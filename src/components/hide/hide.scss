@@ -3,7 +3,7 @@
 }
 
 .hide {
-    position: sticky;
+    position: relative;
     top: 0;
     z-index: 3;
     height: 70vh;
@@ -17,7 +17,7 @@
 .hide__content {
     position: relative;
     z-index: 1;
-    height: 100vh;
+    height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,6 +76,9 @@
     .hide {
         height: 55vh;
     }
+    .hide__content {
+        height: 55vh;
+    }
     .hide__title {
         font-size: 13vw;
     }
@@ -86,6 +89,9 @@
         --hole-size: 316px;
     }
     .hide {
+        height: 45vh;
+    }
+    .hide__content {
         height: 45vh;
     }
 }
@@ -109,6 +115,9 @@
     }
     .hide {
         height: 35vh;
+    }
+    .hide__content {
+        height: 40vh;
     }
     .hide__title {
         font-size: 13.5vw;

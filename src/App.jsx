@@ -5,6 +5,7 @@ import Quote from './components/quote/Quote.jsx';
 import Hide from './components/hide/Hide.jsx';
 import Cards from './components/cards/Cards.jsx';
 import Plus from './components/plus/Plus.jsx';
+import Sliders from './components/sliders/Sliders.jsx';
 import Gift from './components/gift/Gift.jsx';
 import Footer from './components/footer/Footer.jsx';
 
@@ -39,6 +40,7 @@ const currentTheme = activeThemes.length
      <Hide updateTheme={updateTheme} />
      <Cards />
      <Plus updateTheme={updateTheme} />
+     <Sliders />
      <Gift updateTheme={updateTheme}/>
      <Footer />
     </>
