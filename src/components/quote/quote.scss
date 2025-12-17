@@ -20,6 +20,13 @@
             line-height: 120%;
             letter-spacing: -0.02em;
             color: #000;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+             &.show {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
             .quote__text-low {
@@ -31,8 +38,20 @@
                 align-items: center;
             }
                 .quote__title {
-                    font-size: 57px;
+                    font-family: var(--second-family);
                     font-weight: 600;
+                    font-size: 43px;
+                    font-weight: 600;
+                    text-align: left;
+                        &::after {
+                            content: '▍';
+                                animation: caret 1s infinite;
+                                margin-left: 4px;
+                            }
+                            @keyframes caret {
+                                0%, 50% { opacity: 1 }
+                                51%, 100% { opacity: 0 }
+                            }
                 }
 }
 

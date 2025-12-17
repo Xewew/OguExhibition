@@ -25,13 +25,58 @@
     position: relative;
     z-index: 1;
   }
-  .logo__img {
-    margin-top: 100px;
-    width:500px;
-    cursor: default;
-    user-select: none;
-  }
-  }
+    .dot {
+      fill: #010202;
+      stroke: #010202;
+      stroke-width: 5;
+      animation: blinkDot 4.5s ease infinite;
+    }
+      @keyframes blinkDot {
+        0% {
+          fill-opacity: 1;
+          stroke-opacity: 0;
+        }
+        40% {
+          fill-opacity: 0;
+          stroke-opacity: 1;
+        }
+        60% {
+          fill-opacity: 0;
+          stroke-opacity: 1;
+        }
+        100% {
+          fill-opacity: 1;
+          stroke-opacity: 0;
+        }
+      }
+    }
+
+    .glow {
+      fill: none;
+      stroke: #fff;
+      stroke-width: 3;
+      stroke-dasharray: 1800;
+      stroke-dashoffset: 1800;
+      animation: glowDraw 4.5s ease-in-out infinite;
+    }
+    @keyframes glowDraw {
+      0% {
+        stroke-dashoffset: 1800;
+        opacity: 0;
+      }
+      30% {
+        opacity: 1;
+      }
+      60% {
+        stroke-dashoffset: 0;
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        stroke-dashoffset: -1800;
+      }
+    }
+    
 
   .hero__title {
     font-family: 'Montserrat', sans-serif;
@@ -49,7 +94,7 @@
     font-size: 6vw;
     cursor: default;
     transition: .3s;
-    animation: blink 8s infinite;
+    animation: blink 4.5s ease-in-out infinite;
 
     @keyframes blink {
       0%, 100% { color: #000; }

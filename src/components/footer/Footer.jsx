@@ -1,12 +1,14 @@
+import { forwardRef } from 'react';
+
 import './footer.scss';
 import IcoVK from '../../assets/image/vk.png'
 import IcoTG from '../../assets/image/telegram.png'
 import IcoInst from '../../assets/image/inst.png'
 import IcoYT from '../../assets/image/youtube.png'
 
-const Footer = () => {
+const Footer = forwardRef((props, ref) => {
     return (
-        <footer className='footer'>
+        <footer className='footer' ref={ref}>
             <div className="footer__inner">
                 <div className="footer__about-box">
                     <div className="footer__about">
@@ -57,6 +59,6 @@ const Footer = () => {
             </div>
         </footer>
     )
-}
+})
 
 export default Footer

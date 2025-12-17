@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { forwardRef, useState } from "react";
 import "./cards.scss";
 
 import CardEmptyOne from '../../assets/image/card-empty/card-empty-1.jpg';
@@ -35,7 +35,7 @@ const cardPairs = [
   { empty: CardEmptyTen, full: CardFullTen },
 ];
 
-const Cards = () => {
+const Cards = forwardRef((props, ref) => {
   const [activeIndex, setActiveIndex] = useState(null);
 
   const handleCardClick = (index) => {
@@ -47,7 +47,7 @@ const Cards = () => {
   };
 
   return (
-    <section className="cards">
+    <section className="cards" ref={ref}>
       <div className="cards__inner">
         {cardPairs.map((card, i) => (
           <CardItem
@@ -62,7 +62,7 @@ const Cards = () => {
       </div>
     </section>
   );
-};
+});
 
 const CardItem = ({ empty, full, flipped, onClick, index }) => {
   const handleMouseMove = (e) => {

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Curtain from './components/curtain/Curtain.jsx';
 import Hero from './components/hero/Hero.jsx';
 import Quote from './components/quote/Quote.jsx';
@@ -31,18 +31,27 @@ const currentTheme = activeThemes.length
       .sort((a, b) => (b.priority ?? 0) - (a.priority ?? 0))[0]?.theme
   : "dark";
 
+  const cardsRef = useRef(null);
+  const giftRef = useRef(null);
+  const footerRef = useRef(null);
+
 
   return (
     <>
-     <Curtain theme={currentTheme} open={open} setOpen={setOpen} />
+     <Curtain theme={currentTheme} open={open} setOpen={setOpen}
+      sections={
+        {cards: cardsRef, 
+         gift: giftRef,
+         footer: footerRef,}
+        } />
      <Hero />
      <Quote updateTheme={updateTheme} />
      <Hide updateTheme={updateTheme} />
-     <Cards />
+     <Cards ref={cardsRef} />
      <Plus updateTheme={updateTheme} />
      <Sliders />
-     <Gift updateTheme={updateTheme}/>
-     <Footer />
+     <Gift updateTheme={updateTheme} ref={giftRef} />
+     <Footer ref={footerRef}/>
     </>
   )
 }

@@ -1,10 +1,10 @@
-import { useRef, useEffect } from "react";
+import { forwardRef ,useRef, useEffect } from "react";
 import './gift.scss';
 import GiftOne from '../../assets/image/gift-1.jpg';
 import GiftTwo from '../../assets/image/gift-2.jpg';
 import GiftThree from '../../assets/image/gift-3.jpg';
 
-const Gift = ({ updateTheme }) => {
+const Gift = forwardRef(({ updateTheme }, ref) => {
   const sectionRef = useRef(null);
   const sliderRef = useRef(null);
 
@@ -44,7 +44,7 @@ const Gift = ({ updateTheme }) => {
   const sliderImages = [...images, ...images];
 
   return (
-    <section className='gift' ref={sectionRef}>
+    <section className='gift' ref={ref}>
       <div className="gift__inner">
         <h4 className="inf__title">
           РАЗЫГРЫВАЕМ МЕРЧ, ВЕСЕЛЬЕ — ПОД ВОПРОСОМ РАЗЫГРЫВАЕМ МЕРЧ, ВЕСЕЛЬЕ — ПОД ВОПРОСОМ
@@ -57,6 +57,6 @@ const Gift = ({ updateTheme }) => {
       </div>
     </section>
   );
-};
+});
 
 export default Gift;

@@ -2,7 +2,6 @@ import { useRef, useEffect } from "react";
 import "./hide.scss";
 
 const Hide = ({ updateTheme }) => {
-  const ID = "hide";
   const rootRef = useRef(null);
  
   useEffect(() => {
@@ -18,7 +17,7 @@ const Hide = ({ updateTheme }) => {
 
   observer.observe(el);
   return () => observer.disconnect();
-}, []);
+}, [updateTheme]);
 
 
   useEffect(() => {
@@ -45,6 +44,20 @@ const Hide = ({ updateTheme }) => {
     el.style.setProperty("--pointer-y", `${y}px`);
   };
 
+   const handleTouchMove = (e) => {
+    e.preventDefault();
+    const el = rootRef.current;
+    if (!el) return;
+
+    const rect = el.getBoundingClientRect();
+    const touch = e.touches[0];
+    const x = touch.clientX - rect.left;
+    const y = touch.clientY - rect.top;
+
+    el.style.setProperty("--pointer-x", `${x}px`);
+    el.style.setProperty("--pointer-y", `${y}px`);
+  };
+
   const handleLeave = () => {
     const el = rootRef.current;
     if (!el) return;
@@ -63,6 +76,8 @@ const Hide = ({ updateTheme }) => {
       ref={rootRef}
       onMouseMove={handleMove}
       onMouseLeave={handleLeave}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleLeave}
     >
       <div className="hide__content">
         <h3 className="hide__title">3 сентября</h3>
