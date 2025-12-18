@@ -14,10 +14,13 @@
     color: #fff;
     opacity: 1;
     cursor: default;
-    transition: .8s;
+    transform: translateY(0);
+    transition: opacity 0.6s ease 0.4s, transform 0.6s ease 0.4s;
 
         &.hidden {
             opacity: 0;
+            transform: translateY(-10px);
+            pointer-events: none;
         }
 
         .plus__numbers,
@@ -56,13 +59,13 @@
         opacity: 0;
         position: absolute;
         top: -370px;
-        transform: scale(0.5);
-        transition: 0.6s ease;
+        transform: scale(0.5), translateY(10px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
     }
 
   .showFinal {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1), translateY(0);
   }
 
     .plus__result-number {
@@ -76,6 +79,7 @@
     right: 0;
     top: 10px;
     margin: 0;
+    color: #9dff00;
   }
 }
 

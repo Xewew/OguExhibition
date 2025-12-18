@@ -38,31 +38,35 @@ const Plus = ({ updateTheme }) => {
 
     const [step, setStep] = useState(0);
 
-  useEffect(() => {
-    if (!start) return;
-    const timer1 = setTimeout(() => setStep(1), 300);   
-    const timer2 = setTimeout(() => setStep(2), 900);  
-    const timer3 = setTimeout(() => setStep(3), 1500); 
-    const timer4 = setTimeout(() => setStep(4), 2100); 
-    const timer5 = setTimeout(() => setStep(5), 2700);
+ useEffect(() => {
+  if (!start) return;
 
-    const timer6 = setTimeout(() => setStep(6), 3500);
+  let timers = [];
 
-    const timer7 = setTimeout(() => setStep(7), 4200);
+  const runAnimation = () => {
+    setStep(0);
 
-    const timer8 = setTimeout(() => setStep(8), 4800);
+    timers.push(setTimeout(() => setStep(1), 300));
+    timers.push(setTimeout(() => setStep(2), 900));
+    timers.push(setTimeout(() => setStep(3), 1500));
+    timers.push(setTimeout(() => setStep(4), 2100));
+    timers.push(setTimeout(() => setStep(5), 2700));
+    timers.push(setTimeout(() => setStep(6), 3500));
+    timers.push(setTimeout(() => setStep(7), 4200));
+    timers.push(setTimeout(() => setStep(8), 4800));
 
-    return () => {
-      clearTimeout(timer1);
-      clearTimeout(timer2);
-      clearTimeout(timer3);
-      clearTimeout(timer4);
-      clearTimeout(timer5);
-      clearTimeout(timer6);
-      clearTimeout(timer7);
-      clearTimeout(timer8);
-    };
-  }, [start]);
+    timers.push(
+      setTimeout(runAnimation, 6300)
+    );
+  };
+
+  runAnimation();
+
+  return () => {
+    timers.forEach(clearTimeout);
+  };
+}, [start]);
+    
 
   return (
     <section className="plus" ref={sectionRef}>
