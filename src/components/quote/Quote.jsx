@@ -1,5 +1,6 @@
 import { useRef, useEffect, useState } from 'react';
 import './quote.scss';
+import bgVideo from '../../assets/image/bg-video.mov'
 
 const TEXT = `Мы — сбой в вашем представлении об искусстве.
 30 лет кафедра дизайна создавала систему.
@@ -80,6 +81,15 @@ const Quote = ({ updateTheme }) => {
 
     return (
       <section className="quote" ref={sectionRef}>
+        <video
+         src={bgVideo}
+         autoPlay
+         loop
+         muted
+         playsInline
+         className='quote__bg-video'
+         />
+      
         <div className="quote__container">
           <h3 className={`quote__text-right ${showRight ? 'show' : ''}`}>
             Вход свободный ( как и мысль )
