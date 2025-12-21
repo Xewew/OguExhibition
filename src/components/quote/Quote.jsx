@@ -1,6 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
 import './quote.scss';
-import bgVideo from '../../assets/image/bg-video.mov'
+import bgVideo from '../../assets/image/bg-video.mp4'
+
 
 const TEXT = `Мы — сбой в вашем представлении об искусстве.
 30 лет кафедра дизайна создавала систему.
@@ -65,7 +66,6 @@ const Quote = ({ updateTheme }) => {
       charIndex++;
     });
 
-    // вставляем перенос строки после каждой строки (кроме последней)
     if (lineIndex < TEXT_LINES.length - 1) {
       setTimeout(() => {
         el.innerHTML += '<br/>';
@@ -73,7 +73,6 @@ const Quote = ({ updateTheme }) => {
     }
   });
 
-  // Показать quote__text-right после окончания печати
   setTimeout(() => {
     setShowRight(true);
   }, totalDuration + 200);
