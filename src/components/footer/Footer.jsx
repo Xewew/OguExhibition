@@ -33,12 +33,12 @@ const Footer = forwardRef((props, ref) => {
                         <p className="footer__description">
                             ул. Володарского, д. 13, Оренбург, 460000, Россия
                         </p>
-                        <a href='mailto:logout.expo@gmail.com' className='footer__mail'>logout.expo@gmail.com</a>
+                        <a href='mailto:Polina.semak.2018@mail.ru' className='footer__mail'>Polina.semak.2018@mail.ru</a>
                     </div>
                 <div className="footer__about">
                     <h3 className="footer__title title-ico">стать участником</h3>
                     <input maxlength="29" type="mail" placeholder='Email' className="footer__input" />
-                    <button className='footer__btn'></button>
+                    <button type='submit' className='footer__btn'></button>
                     <div className="icoSocial">
                     <a href="#"><img src={IcoVK} alt="" className="footer__ico" /></a>
                     <a href="#"><img src={IcoTG} alt="" className="footer__ico" /></a>

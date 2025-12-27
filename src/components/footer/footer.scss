@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+.nunito-addonFamily {
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 20;
+  font-style: italic;
+}
+
 .footer {
     position: relative;
     z-index: 7;
@@ -45,8 +54,12 @@
 }
 
 .footer__mail {
-    margin-top: 10px;
-    font-size: 20px;
+    font-family: "Nunito", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    text-decoration: underline;
+    margin-top: 0px;
+    font-size: 16px;
     color: #000;
 
 }
@@ -78,7 +91,7 @@
     display: block;
     background-image: url('../../assets/image/btn.png');
     left: 78.6%;
-    top: -29.3%;
+    top: -29.1%;
     width: 53px;
     height: 53px;
     border: none;
@@ -229,6 +242,10 @@
     max-width: 300px;
     text-align: left;
     }
+    .footer__btn {
+        left: 79.1%;
+        top: -29.6%;
+    }
 }
 
 @media (max-width: 450px) {
@@ -243,6 +260,10 @@
     .footer-text {
     max-width: 300px;
     text-align: left;
+    }
+    .footer__btn {
+        left: 78.6%;
+        top: -29.2%;
     }
 }
 

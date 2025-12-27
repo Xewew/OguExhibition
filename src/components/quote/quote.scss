@@ -133,7 +133,7 @@
   
     .quote .quote__container {
         max-width: 780px;
-         padding: 250px 25px 70px;
+         padding: 150px 25px 70px;
     }
     .quote .quote__text-right {
         font-size: 3vw;
@@ -142,18 +142,20 @@
         max-width: 510px;
     }
     .quote .quote__title {
-        font-size: 25px;
+        font-size: 21px;
+        line-height: 1.3;
+        margin-inline: 15px;
     }
 }
 
 @media (max-width: 450px) {
     .quote .quote__container {
-         padding: 150px 25px;
+         padding: 140px 25px;
     }
     .quote .quote__text-right {
-        font-size: 3.5vw;
+        font-size: 3.6vw;
     }
     .quote .quote__title {
-        font-size: 6vw;
+        font-size: 4.2vw;
     }
 }
