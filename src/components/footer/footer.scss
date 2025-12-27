@@ -281,3 +281,10 @@
     text-align: left;
     }
 }
+
+@media (max-width: 346px) {
+    .footer__btn {
+        left: 78.6%;
+        top: -25.2%;
+    }
+}
