@@ -182,4 +182,15 @@
     .quote {
         min-height: 50vh;
     }
+    .quote .quote__container {
+         padding: 70px 30px 20px;
+    }
+    .quote .quote__text-right {
+        font-size: 3.6vw;
+    }
+    .quote .quote__title {
+        font-size: 3.5vw;
+        font-weight: 600;
+        line-height: 1.9;
+    }
 }
