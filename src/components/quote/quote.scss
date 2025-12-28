@@ -177,3 +177,9 @@
         font-size: 3.8vw;
     }
 }
+
+@media (max-width: 360px) {
+    .quote {
+        min-height: 50vh;
+    }
+}
